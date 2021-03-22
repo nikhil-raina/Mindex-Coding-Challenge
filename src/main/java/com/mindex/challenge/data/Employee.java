@@ -58,11 +58,7 @@ public class Employee {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return getEmployeeId().equals(employee.getEmployeeId()) &&
-                getFirstName().equals(employee.getFirstName()) &&
-                getLastName().equals(employee.getLastName()) &&
-                getPosition().equals(employee.getPosition()) &&
-                getDepartment().equals(employee.getDepartment());
+        return getEmployeeId().equals(employee.getEmployeeId());
     }
 
     @Override
