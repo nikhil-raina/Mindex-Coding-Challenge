@@ -23,8 +23,8 @@ public class DataBootstrap {
 
     @PostConstruct
     public void init() {
-//        InputStream inputStream = this.getClass().getResourceAsStream(DATASTORE_LOCATION);
-        InputStream inputStream = this.getClass().getResourceAsStream(DATASTORE_LOCATION_CUSTOM);
+        InputStream inputStream = this.getClass().getResourceAsStream(DATASTORE_LOCATION);
+//        InputStream inputStream = this.getClass().getResourceAsStream(DATASTORE_LOCATION_CUSTOM);
 
         Employee[] employees = null;
 
