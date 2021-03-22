@@ -58,17 +58,17 @@ public class Employee {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return employeeId.equals(employee.employeeId) &&
-                firstName.equals(employee.firstName) &&
-                lastName.equals(employee.lastName) &&
-                position.equals(employee.position) &&
-                department.equals(employee.department) && 
-                Objects.equals(directReports, employee.directReports);
+        return getEmployeeId().equals(employee.getEmployeeId()) &&
+                getFirstName().equals(employee.getFirstName()) &&
+                getLastName().equals(employee.getLastName()) &&
+                getPosition().equals(employee.getPosition()) &&
+                getDepartment().equals(employee.getDepartment());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(employeeId, firstName, lastName, position, department, directReports);
+        return Objects.hash(getEmployeeId(), getFirstName(), getLastName(),
+                getPosition(), getDepartment(), getDirectReports());
     }
 
     public List<Employee> getDirectReports() {
