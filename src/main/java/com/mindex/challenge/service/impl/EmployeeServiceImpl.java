@@ -7,6 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -48,6 +50,19 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     public int getNumberOfReports(String employeeID) {
-        return 0;
+        int totalDirectReports = 0;
+
+        if (employeeID.equals(""))
+            return 0;
+
+        // Instance of Employee
+        Employee employee = this.read(employeeID);
+        List<Employee> directReports = employee.getDirectReports();
+
+        for (Employee emp : directReports) {
+            totalDirectReports += this.getNumberOfReports(emp.getEmployeeId());
+        }
+
+        return totalDirectReports;
     }
 }
