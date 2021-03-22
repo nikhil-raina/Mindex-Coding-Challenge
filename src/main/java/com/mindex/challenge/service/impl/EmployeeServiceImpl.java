@@ -59,10 +59,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         Employee employee = this.read(employeeID);
         List<Employee> directReports = employee.getDirectReports();
 
-        for (Employee emp : directReports) {
-            totalDirectReports += this.getNumberOfReports(emp.getEmployeeId());
+        if (directReports != null) {
+            for (Employee emp : directReports) {
+                totalDirectReports += 1 + this.getNumberOfReports(emp.getEmployeeId());
+            }
         }
-
         return totalDirectReports;
     }
 }
