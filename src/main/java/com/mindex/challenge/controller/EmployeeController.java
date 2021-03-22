@@ -37,8 +37,7 @@ public class EmployeeController {
         return employeeService.update(employee);
     }
 
-    @GetMapping("/employee/reports/{id}")
-    public ReportingStructure getNumberOfReports(@PathVariable String id) {
+    public ReportingStructure getNumberOfReports(String id) {
         LOG.debug("Total Number of reports for Employee ID [{}]", id);
 
         Employee employee = employeeService.read(id);
