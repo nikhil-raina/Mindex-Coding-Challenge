@@ -12,7 +12,7 @@ import java.io.InputStream;
 
 @Component
 public class DataBootstrap {
-//    private static final String DATASTORE_LOCATION = "/static/employee_database.json";
+    private static final String DATASTORE_LOCATION = "/static/employee_database.json";
     private static final String DATASTORE_LOCATION_CUSTOM = "/static/custom_database.json";
 
     @Autowired
