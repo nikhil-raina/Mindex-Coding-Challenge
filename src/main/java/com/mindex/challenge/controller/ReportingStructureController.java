@@ -17,12 +17,14 @@ public class ReportingStructureController {
     @Autowired
     private ReportingStructureService reportingStructureService;
 
+    /**
+     * Mapping the GET request to the read method
+     * @param id Employee ID
+     * @return A ReportingStructure Obj of the employee ID entered
+     */
     @GetMapping("/employee/reports/{id}")
     public ReportingStructure read(@PathVariable String id) {
         LOG.debug("Received reportingStructure read request for employeeId [{}]", id);
-        ReportingStructure rs = reportingStructureService.read(id);
-        LOG.debug("REPORTS: [{}]", rs.numberOfReports());
-//        return reportingStructureService.read(id);
-        return rs;
+        return reportingStructureService.read(id);
     }
 }
