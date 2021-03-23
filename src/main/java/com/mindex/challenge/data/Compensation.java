@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
 import java.util.Objects;
 
 public class Compensation {
@@ -16,7 +14,7 @@ public class Compensation {
 
     // Not sure what type of dates needs to be implemented here
     // storing UTC time
-    @JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private LocalDateTime effectiveDate;
 
     public Compensation(){ }
@@ -43,8 +41,7 @@ public class Compensation {
 
     public void setEffectiveDate(LocalDateTime effectiveDate) {
         // Default is EST for data consistency
-        ZonedDateTime thisZone = effectiveDate.atZone(ZoneId.of("America/New_York")).withZoneSameInstant(ZoneId.of("UTC"));
-        this.effectiveDate = thisZone.toLocalDateTime();
+        this.effectiveDate = effectiveDate;
     }
 
     @Override
