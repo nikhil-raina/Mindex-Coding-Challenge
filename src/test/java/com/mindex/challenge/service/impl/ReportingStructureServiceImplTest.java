@@ -39,7 +39,7 @@ public class ReportingStructureServiceImplTest {
         this.reportingStructureUrl = "http://localhost:" + this.port + "/employee/reports/{id}";
 
         this.emp1 = this.employeeRepository.findByEmployeeId("16a596ae-edd3-4847-99fe-c4518e82c86f");
-        this.emp1 = this.employeeRepository.findByEmployeeId("test-2-ID");
+        this.emp2 = this.employeeRepository.findByEmployeeId("test-2-ID");
     }
 
     @Test
