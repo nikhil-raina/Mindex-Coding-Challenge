@@ -1,5 +1,6 @@
 package com.mindex.challenge;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mindex.challenge.dao.CompensationRepository;
 import com.mindex.challenge.dao.EmployeeRepository;
@@ -38,8 +39,9 @@ public class DataBootstrap {
         Compensation[] compensations = null;
 
         try {
-            compensations = this.objectMapper.readValue(inputStreamCompensation, Compensation[].class);
             employees = objectMapper.readValue(inputStream, Employee[].class);
+            this.objectMapper.enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
+            compensations = this.objectMapper.readValue(inputStreamCompensation, Compensation[].class);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
