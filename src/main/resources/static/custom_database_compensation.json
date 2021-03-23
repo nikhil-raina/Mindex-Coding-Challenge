@@ -1,0 +1,14 @@
+[
+  {
+    "effectiveDate": "03-15-2020",
+    "employee": {
+      "employeeId" : "test-2-ID",
+      "firstName" : "Super",
+      "lastName" : "Man",
+      "position" : "Development Manager",
+      "department" : "Engineering",
+      "directReports" : []
+    },
+    "salary": 100000
+  }
+]
