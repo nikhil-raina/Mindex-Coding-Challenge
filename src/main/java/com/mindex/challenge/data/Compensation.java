@@ -1,23 +1,25 @@
 package com.mindex.challenge.data;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.Objects;
 
 public class Compensation {
+
+    @JsonSerialize
     private Employee employee;
     private int salary;
 
     // Not sure what type of dates needs to be implemented here
     // storing UTC time
+    @JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime effectiveDate;
 
-    public Compensation(Employee employee, int salary, LocalDateTime effectiveDate) {
-        this.employee = employee;
-        this.salary = salary;
-        this.effectiveDate = effectiveDate;
-    }
+    public Compensation(){ }
 
     public Employee getEmployee() {
         return this.employee;
