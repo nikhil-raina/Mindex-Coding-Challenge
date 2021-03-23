@@ -39,5 +39,45 @@
         "department" : "Engineering"
       }
     ]
+  },
+  {
+    "employeeId" : "b7839309-3348-463b-a7e3-5de1c168beb3",
+    "firstName" : "Megan",
+    "lastName" : "Floyd",
+    "position" : "Development Manager",
+    "department" : "Engineering",
+    "directReports" : [
+      {
+        "employeeId" : "test-2-ID",
+        "firstName" : "Super",
+        "lastName" : "Man",
+        "position" : "Development Manager",
+        "department" : "Engineering",
+        "directReports" : []
+      }
+    ]
+  },
+  {
+    "employeeId" : "test-2-ID",
+    "firstName" : "Super",
+    "lastName" : "Man",
+    "position" : "Development Manager",
+    "department" : "Engineering",
+    "directReports" : []
+  },
+  {
+    "employeeId": "test-1-ID",
+    "firstName" : "Bat",
+    "lastName" : "Man",
+    "position" : "Development Manager",
+    "department" : "Engineering"
+  },
+  {
+    "employeeId": "03aa1462-ffa9-4978-901b-7c001562cf6f",
+    "firstName" : "Albert",
+    "lastName" : "Einstein",
+    "position" : "Development Manager",
+    "department" : "Engineering",
+    "directReports" : []
   }
 ]
