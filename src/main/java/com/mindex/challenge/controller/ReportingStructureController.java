@@ -18,9 +18,11 @@ public class ReportingStructureController {
     private ReportingStructureService reportingStructureService;
 
     /**
-     * Mapping the GET request to the read method
-     * @param id Employee ID
-     * @return A ReportingStructure Obj of the employee ID entered
+     * Enters an employee ID and returns a ReportingStructure object of that
+     * employee. Responsible for setting total number of reports based on
+     * the DirectReports of that employee.
+     * @param id ID of the employee
+     * @return ReportingStructure of the Employee
      */
     @GetMapping("/employee/reports/{id}")
     public ReportingStructure read(@PathVariable String id) {
