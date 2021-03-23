@@ -10,7 +10,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 
 @Service
 public class CompensationServiceImpl implements CompensationService {
@@ -30,10 +29,6 @@ public class CompensationServiceImpl implements CompensationService {
         // gets employee from the read method in the EmployeeServiceImpl
         Employee emp = employeeService.read(compensation.getEmployee().getEmployeeId());
         compensation.setEmployee(emp);
-
-        // Gets the normal format of the time entry to change into UTC
-        LocalDateTime effectiveDate = compensation.getEffectiveDate();
-        compensation.setEffectiveDate(effectiveDate);
         compensationRepository.insert(compensation);
 
         return compensation;
@@ -42,12 +37,13 @@ public class CompensationServiceImpl implements CompensationService {
     @Override
     public Compensation read(String employeeId) {
         LOG.debug("Reading for compensation of employee with id [{}]", employeeId);
-//        Compensation compensation = compensationRepository.findByEmployeeId(employeeId);
         Employee emp = employeeService.read(employeeId);
         Compensation compensation = compensationRepository.findByEmployee(emp);
         if (compensation == null) {
             throw new RuntimeException("Invalid employeeId: " + employeeId);
         }
+        LOG.info("EMP DATA: [{}]", emp);
+        LOG.info("COMP DATA: [{}]", compensation);
         return compensation;
     }
 }
