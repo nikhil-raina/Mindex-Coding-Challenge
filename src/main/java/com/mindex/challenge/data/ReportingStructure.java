@@ -19,8 +19,8 @@ public class ReportingStructure {
         this.employee = employee;
     }
 
-    public int numberOfReports() {
-        return numberOfReports;
+    public int getNumberOfReports() {
+        return this.numberOfReports;
     }
 
     public void setNumberOfEmployees(int numberOfEmployees) {
@@ -31,19 +31,19 @@ public class ReportingStructure {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         ReportingStructure repoStruct = (ReportingStructure) o;
-        return getEmployee().equals(repoStruct.getEmployee());
+        return getEmployee().equals(repoStruct.getEmployee()) && getNumberOfReports() == repoStruct.getNumberOfReports();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getEmployee(), numberOfReports());
+        return Objects.hash(getEmployee(), getNumberOfReports());
     }
 
     @Override
     public String toString() {
         return "ReportingStructure {" +
                 "employee=" + getEmployee() +
-                ", numberOfEmployees=" + numberOfReports() +
+                ", numberOfEmployees=" + getNumberOfReports() +
                 '}';
     }
 }
