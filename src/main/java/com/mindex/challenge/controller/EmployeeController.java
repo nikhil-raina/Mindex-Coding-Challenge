@@ -36,13 +36,4 @@ public class EmployeeController {
         employee.setEmployeeId(id);
         return employeeService.update(employee);
     }
-
-    public ReportingStructure getNumberOfReports(String id) {
-        LOG.debug("Total Number of reports for Employee ID [{}]", id);
-
-        Employee employee = employeeService.read(id);
-        int totalNumReports = employeeService.getNumberOfReports(id);
-
-        return new ReportingStructure(employee, totalNumReports);
-    }
 }
