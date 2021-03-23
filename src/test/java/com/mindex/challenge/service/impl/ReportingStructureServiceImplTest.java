@@ -58,7 +58,7 @@ public class ReportingStructureServiceImplTest {
     public void testReportingStructureHasCorrectNumberOfReports() {
         ReportingStructure CuT = new ReportingStructure(this.emp1, 10);
         int numberOfReports = 10;
-        assertEquals(CuT.numberOfReports(), numberOfReports);
+        assertEquals(CuT.getNumberOfReports(), numberOfReports);
     }
 
     @Test
