@@ -1,6 +1,7 @@
 package com.mindex.challenge.data;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Employee {
     private String employeeId;
@@ -51,6 +52,19 @@ public class Employee {
 
     public void setDepartment(String department) {
         this.department = department;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return getEmployeeId().equals(employee.getEmployeeId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getEmployeeId(), getFirstName(), getLastName(),
+                getPosition(), getDepartment(), getDirectReports());
     }
 
     public List<Employee> getDirectReports() {
