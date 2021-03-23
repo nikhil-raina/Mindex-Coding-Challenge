@@ -31,8 +31,7 @@ public class ReportingStructure {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         ReportingStructure repoStruct = (ReportingStructure) o;
-        return numberOfReports() == repoStruct.numberOfReports() &&
-                getEmployee().equals(repoStruct.getEmployee());
+        return getEmployee().equals(repoStruct.getEmployee());
     }
 
     @Override
