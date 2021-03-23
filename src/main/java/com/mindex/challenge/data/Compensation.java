@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class Compensation {
@@ -39,9 +40,10 @@ public class Compensation {
         return this.effectiveDate;
     }
 
-    public void setEffectiveDate(LocalDateTime effectiveDate) {
+    public void setEffectiveDate(String effectiveDate) {
         // Default is EST for data consistency
-        this.effectiveDate = effectiveDate;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        this.effectiveDate = LocalDateTime.parse(effectiveDate, formatter);
     }
 
     @Override
