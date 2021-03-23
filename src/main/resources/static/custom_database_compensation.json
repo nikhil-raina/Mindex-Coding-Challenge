@@ -1,6 +1,6 @@
 [
   {
-    "effectiveDate": "03-15-2020",
+    "effectiveDate": "2020-03-15T05:30:00",
     "employee": {
       "employeeId" : "test-2-ID",
       "firstName" : "Super",
@@ -10,5 +10,17 @@
       "directReports" : []
     },
     "salary": 100000
+  },
+  {
+    "employee": {
+      "employeeId": "03aa1462-ffa9-4978-901b-7c001562cf6f",
+      "firstName": "Albert",
+      "lastName": "Einstein",
+      "position": "Development Manager",
+      "department": "Engineering",
+      "directReports": []
+    },
+    "salary": 10000000,
+    "effectiveDate": "2021-03-15T09:30:00"
   }
 ]
