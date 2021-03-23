@@ -25,6 +25,7 @@ public class ReportingStructureServiceImpl implements ReportingStructureService 
         Employee employee = employeeService.read(employeeId);
         int totalReports = employeeService.getNumberOfReports(employeeId);
 
+        LOG.info("Total Number of reports: " + totalReports);
         return new ReportingStructure(employee, totalReports);
     }
 }
