@@ -49,7 +49,7 @@ public class Compensation {
     @Override
     public String toString() {
         return "Compensation{" +
-                "employee=" + getEmployee() +
+                "employee=" + getEmployee().toString() +
                 ", salary=" + getSalary() +
                 ", effectiveDate=" + getEffectiveDate() +
                 '}';
