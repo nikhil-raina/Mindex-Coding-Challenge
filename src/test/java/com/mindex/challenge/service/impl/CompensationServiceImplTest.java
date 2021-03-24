@@ -44,7 +44,7 @@ public class CompensationServiceImplTest {
         this.compensationReadUrl = "http://localhost:" + this.port + "/employee/compensation/{id}";
 
         this.emp1 = this.employeeRepository.findByEmployeeId("03aa1462-ffa9-4978-901b-7c001562cf6f");
-        this.emp2 = this.employeeRepository.findByEmployeeId("test-2-ID");
+        this.emp2 = this.employeeRepository.findByEmployeeId("c0c2293d-16bd-4603-8e08-638a9d18b22c");
         this.compensation1 = new Compensation();
         this.compensation1.setEmployee(this.emp1);
         this.compensation1.setSalary(1000);
