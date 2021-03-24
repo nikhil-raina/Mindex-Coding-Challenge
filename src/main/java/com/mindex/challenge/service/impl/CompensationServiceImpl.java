@@ -42,8 +42,7 @@ public class CompensationServiceImpl implements CompensationService {
         if (compensation == null) {
             throw new RuntimeException("Invalid employeeId: " + employeeId);
         }
-        LOG.info("EMP DATA: [{}]", emp);
-        LOG.info("COMP DATA: [{}]", compensation);
+        LOG.info("COMP DATA: [{}]", compensation.toString());
         return compensation;
     }
 }
